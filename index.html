@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Kothari | Blockchain Developer — Building the Decentralized Future</title>
+  <meta name="description"
+    content="Blockchain & DeFi Engineer with 3+ years experience in Solidity, Hyperledger Besu, and private chain infrastructure. Specializing in DeFi protocols, NFT marketplaces, and enterprise-grade decentralized solutions." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo+Narrow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════ PAGE LOADER ═══════════════ -->
+  <div id="loader" class="loader">
+    <div class="loader__content">
+      <div class="loader__percentage" id="loader-percentage">0%</div>
+      <div class="loader__message" id="loader-message">Initializing chain...</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CUSTOM CURSOR ═══════════════ -->
+  <div class="cursor" id="cursor">
+    <div class="cursor__dot"></div>
+    <div class="cursor__outline"></div>
+  </div>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">YK<span class="accent">.</span></a>
+    <div class="nav__links">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#projects" class="nav__link">Work</a>
+      <a href="#experience" class="nav__link">Experience</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+    <button class="wallet-btn" id="wallet-btn">
+      <span class="wallet-btn__shimmer"></span>
+      <span class="wallet-btn__status" id="wallet-status-dot"></span>
+      <span class="wallet-btn__text" id="wallet-btn-text">Connect Wallet</span>
+    </button>
+    <!-- Mobile menu toggle -->
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-menu__link">About</a>
+    <a href="#projects" class="mobile-menu__link">Work</a>
+    <a href="#experience" class="mobile-menu__link">Experience</a>
+    <a href="#contact" class="mobile-menu__link">Contact</a>
+  </div>
+
+  <!-- ═══════════════ HERO: CHAIN ENGINE ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__canvas-wrap">
+      <canvas id="ambient-canvas" class="hero__ambient-canvas"></canvas>
+      <canvas id="chain-canvas" class="hero__chain-canvas"></canvas>
+    </div>
+    <div class="hero__overlay" id="hero-overlay">
+      <p class="hero__eyebrow" id="hero-eyebrow">BLOCKCHAIN & DEFI ENGINEER</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">BUILDING THE</span>
+        <span class="hero__title-line hero__title-line--accent">DECENTRALIZED FUTURE</span>
+      </h1>
+      <p class="hero__scroll-hint" id="hero-scroll-hint">Scroll to explore</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S1: ABOUT ═══════════════ -->
+  <section class="section section--light" id="about">
+    <div class="container">
+      <span class="eyebrow reveal-text">About</span>
+      <h2 class="section__title reveal-text">I ARCHITECT<br />TRUSTLESS SYSTEMS</h2>
+      <p class="section__desc reveal-text">
+        A results-driven Blockchain & DeFi Engineer with 3+ years of experience architecting enterprise-grade
+        decentralized solutions. I specialize in Solidity, Hyperledger Besu, and private chain infrastructure, leading
+        teams to build NFT marketplaces, cryptocurrency wallets, and DApps across Ethereum, Ripple, Cosmos, and Helium
+        ecosystems.
+      </p>
+      <div class="section__ctas reveal-text">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="https://www.linkedin.com/in/0xyash/" target="_blank" class="btn btn--outline">LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S2: TECH STACK ═══════════════ -->
+  <section class="section section--dark" id="techstack">
+    <div class="container">
+      <span class="eyebrow reveal-text">The Toolkit</span>
+      <h2 class="section__title section__title--white reveal-text">TECH STACK</h2>
+    </div>
+    <div class="tech-slider" id="tech-slider">
+      <div class="tech-slider__track" id="tech-slider-track">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+    <div class="tech-slider__nav">
+      <button class="tech-slider__btn tech-slider__btn--prev" id="tech-prev" aria-label="Previous">&#8592;</button>
+      <button class="tech-slider__btn tech-slider__btn--next" id="tech-next" aria-label="Next">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S2.5: NODE RUSH BANNER ═══════════════ -->
+  <section class="section section--game-banner" id="game-banner">
+    <div class="container">
+      <h2 class="game-banner__title reveal-text">NEED A BREAK?</h2>
+      <p class="game-banner__subtitle reveal-text">Test your reflexes. Catch the packets. Avoid the exploits.</p>
+      <button class="btn btn--accent btn--large game-banner__play" id="play-node-rush">PLAY NODE RUSH</button>
+      <div class="game-banner__leaderboard" id="leaderboard-preview">
+        <!-- Top 3 scores injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S3: FEATURED PROJECTS ═══════════════ -->
+  <section class="section section--light" id="projects">
+    <div class="container">
+      <span class="eyebrow reveal-text">Selected Work</span>
+      <h2 class="section__title reveal-text">FEATURED PROJECTS</h2>
+      <div class="projects__list" id="projects-list">
+        <!-- Project 1 -->
+        <a href="https://alphaexchange.co/" target="_blank" class="project-card reveal-text">
+          <span class="project-card__number">01</span>
+          <div class="project-card__info">
+            <h3 class="project-card__title">ALPHA-CITY Exchange</h3>
+            <p class="project-card__desc">High-performance cryptocurrency exchange platform with multi-chain wallet
+              integration, advanced trading engines, and real-time order matching.</p>
+            <div class="project-card__tags">
+              <span class="tag">Solidity</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">React</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag tag--link">alphaexchange.co &#8599;</span>
+            </div>
+          </div>
+          <span class="project-card__arrow">&#8594;</span>
+        </a>
+        <!-- Project 2 -->
+        <a href="https://bidsmart.live/" target="_blank" class="project-card reveal-text">
+          <span class="project-card__number">02</span>
+          <div class="project-card__info">
+            <h3 class="project-card__title">BidSmart</h3>
+            <p class="project-card__desc">World's first AI-enhanced digital asset auction platform with verified NFT
+              collections, penny auctions, rewards, and referral system — built for transparency and ease of use.</p>
+            <div class="project-card__tags">
+              <span class="tag">Solidity</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">The Graph</span>
+              <span class="tag">NestJS</span>
+              <span class="tag tag--link">bidsmart.live &#8599;</span>
+            </div>
+          </div>
+          <span class="project-card__arrow">&#8594;</span>
+        </a>
+        <!-- Project 3 -->
+        <a href="https://www.reltime.com/" target="_blank" class="project-card reveal-text">
+          <span class="project-card__number">03</span>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Reltime Private Chain</h3>
+            <p class="project-card__desc">Enterprise private blockchain built on Hyperledger Besu with custom consensus,
+              improving system efficiency by 40% and enabling secure tokenized transactions.</p>
+            <div class="project-card__tags">
+              <span class="tag">Hyperledger Besu</span>
+              <span class="tag">Solidity</span>
+              <span class="tag">NestJS</span>
+              <span class="tag tag--link">reltime.com &#8599;</span>
+            </div>
+          </div>
+          <span class="project-card__arrow">&#8594;</span>
+        </a>
+        <!-- Project 4 -->
+        <a href="#" class="project-card reveal-text">
+          <span class="project-card__number">04</span>
+          <div class="project-card__info">
+            <h3 class="project-card__title">Multi-Chain Crypto Wallet</h3>
+            <p class="project-card__desc">Secure cryptocurrency wallet supporting Ethereum, Ripple, Cosmos, and Helium
+              networks with HD key derivation, token management, and DApp browser.</p>
+            <div class="project-card__tags">
+              <span class="tag">Web3.js</span>
+              <span class="tag">React Native</span>
+              <span class="tag">TypeScript</span>
+            </div>
+          </div>
+          <span class="project-card__arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S4: CINEMATIC BANNER ═══════════════ -->
+  <section class="section section--cinematic" id="philosophy">
+    <div class="cinematic__overlay">
+      <h2 class="cinematic__title reveal-text">CODE IS LAW.<br />I WRITE THE LAW.</h2>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S5: EXPERIENCE & CREDENTIALS ═══════════════ -->
+  <section class="section section--dark" id="experience">
+    <div class="container">
+      <span class="eyebrow reveal-text">The Proof</span>
+      <h2 class="section__title section__title--white reveal-text">EXPERIENCE &<br />CREDENTIALS</h2>
+      <div class="experience__grid">
+        <!-- Left: Timeline -->
+        <div class="experience__timeline reveal-text">
+          <div class="timeline-item">
+            <span class="timeline-item__date">Aug 2025 - Present</span>
+            <h3 class="timeline-item__company">Sigma Solve, Inc.</h3>
+            <p class="timeline-item__role">Sr. Blockchain Developer & Full-Stack Developer</p>
+            <p class="timeline-item__desc">Leading blockchain innovation, designing DeFi protocols, and building
+              ALPHA-CITY exchange platform.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-item__date">Jul 2024 - Jul 2025</span>
+            <h3 class="timeline-item__company">Reltime</h3>
+            <p class="timeline-item__role">Blockchain Developer</p>
+            <p class="timeline-item__desc">Engineered the Reltime private chain on Hyperledger Besu, improving system
+              efficiency by 40%.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-item__date">Jan 2024 - Dec 2024</span>
+            <h3 class="timeline-item__company">TSC Design</h3>
+            <p class="timeline-item__role">Blockchain Developer & Full-Stack Developer</p>
+            <p class="timeline-item__desc">Built full-stack dApps and smart contract systems for enterprise clients.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-item__date">Dec 2022 - Nov 2023</span>
+            <h3 class="timeline-item__company">Web4Next</h3>
+            <p class="timeline-item__role">Blockchain Developer</p>
+            <p class="timeline-item__desc">Developed decentralized applications and NFT platforms across multiple
+              ecosystems.</p>
+          </div>
+        </div>
+        <!-- Right: Credentials -->
+        <div class="experience__credentials reveal-text">
+          <div class="credential-item">
+            <span class="credential-item__icon">&#9830;</span>
+            <div>
+              <h4 class="credential-item__title">Uniswap Hook Incubator</h4>
+              <p class="credential-item__detail">October Cohort, Uniswap v4 Hooks</p>
+            </div>
+          </div>
+          <a href="https://wwjmrd.com/archive/2025/3/2335/smart-door-operation-over-blockchain-using-evm-compatible-blockchain-website-hostinger-static-ip-esp32-and-arduino-mega"
+            target="_blank" class="credential-item">
+            <span class="credential-item__icon">&#9733;</span>
+            <div>
+              <h4 class="credential-item__title">Published Research</h4>
+              <p class="credential-item__detail">Smart Door Operation Over Blockchain, WWJMRD 2025</p>
+            </div>
+          </a>
+
+          <div class="credential-item">
+            <span class="credential-item__icon">&#9998;</span>
+            <div>
+              <h4 class="credential-item__title">Multi-Chain Expertise</h4>
+              <p class="credential-item__detail">Ethereum, Ripple, Cosmos, Helium, Solana, RGB Protocol, Solang</p>
+            </div>
+          </div>
+          <div class="credential-item">
+            <span class="credential-item__icon">&#9881;</span>
+            <div>
+              <h4 class="credential-item__title">AI & AI Agents</h4>
+              <p class="credential-item__detail">Integrating LLMs and autonomous agents with Web3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ S6: CONTACT & GUESTBOOK ═══════════════ -->
+  <section class="section section--light" id="contact">
+    <div class="container">
+      <h2 class="section__title reveal-text">HAVE AN IDEA?<br />LET'S BUILD IT ON-CHAIN.</h2>
+      <p class="section__desc reveal-text">
+        I'm currently open to freelance projects and full-time roles in DeFi, private chain infrastructure, and Web3
+        solutions architecture.
+      </p>
+      <div class="section__ctas reveal-text">
+        <a href="mailto:kothariyash2711@gmail.com" class="btn btn--accent">Get In Touch</a>
+        <button class="btn btn--outline-dark" id="copy-email-btn" data-email="kothariyash2711@gmail.com">Copy
+          Email</button>
+      </div>
+
+      <!-- Guestbook -->
+      <div class="guestbook" id="guestbook">
+        <h3 class="guestbook__title reveal-text">Wall of Visitors</h3>
+        <p class="guestbook__count" id="guestbook-count">0 builders have visited</p>
+        <div class="guestbook__ticker" id="guestbook-ticker">
+          <!-- Visitor entries injected by JS -->
+        </div>
+        <button class="btn btn--accent guestbook__sign-btn" id="sign-guestbook-btn">
+          Connect Wallet to Sign
+        </button>
+      </div>
+
+      <!-- Social links -->
+      <div class="socials reveal-text">
+        <a href="https://github.com/yashkothari27" target="_blank" aria-label="GitHub" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://x.com/yash__27" target="_blank" aria-label="X / Twitter" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/0xyash/" target="_blank" aria-label="LinkedIn" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="https://warpcast.com" target="_blank" aria-label="Farcaster" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M5.002 3h13.996v2.394h-1.668l.87 1.54H19.2v11.133a1.6 1.6 0 01-1.6 1.6h-.533a1.6 1.6 0 01-1.6-1.6v-4.4c0-1.797-1.397-3.267-3.2-3.4v-.067c1.803-.133 3.2-1.603 3.2-3.4H8.533c0 1.797 1.397 3.267 3.2 3.4v.067c-1.803.133-3.2 1.603-3.2 3.4v4.4a1.6 1.6 0 01-1.6 1.6h-.533a1.6 1.6 0 01-1.6-1.6V6.934H6.8l.87-1.54H5.002V3z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <h4 class="footer__heading">Navigation</h4>
+        <a href="#about" class="footer__link">About</a>
+        <a href="#techstack" class="footer__link">Tech Stack</a>
+        <a href="#projects" class="footer__link">Projects</a>
+        <a href="#experience" class="footer__link">Experience</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Projects</h4>
+        <a href="https://alphaexchange.co/" target="_blank" class="footer__link">ALPHA-CITY Exchange</a>
+        <a href="https://bidsmart.live/" target="_blank" class="footer__link">BidSmart</a>
+        <a href="https://www.reltime.com/" target="_blank" class="footer__link">Reltime Private Chain</a>
+        <a href="#" class="footer__link">Multi-Chain Wallet</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Socials</h4>
+        <a href="https://github.com/yashkothari27" target="_blank" class="footer__link">GitHub</a>
+        <a href="https://x.com/yash__27" target="_blank" class="footer__link">X / Twitter</a>
+        <a href="https://www.linkedin.com/in/0xyash/" target="_blank" class="footer__link">LinkedIn</a>
+        <a href="https://warpcast.com" target="_blank" class="footer__link">Farcaster</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Legal</h4>
+        <a href="#" class="footer__link">Privacy Policy</a>
+        <a href="#" class="footer__link">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__stats" id="network-stats">
+        <span class="mono-muted">ETH Mainnet | Gas: -- Gwei | Block: #-------</span>
+      </div>
+      <p class="footer__copy mono-muted">&copy; 2025 Yash Kothari. All rights reserved.</p>
+      <p class="footer__easter mono-muted">Built with &lt;3 and Solidity</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ NODE RUSH GAME OVERLAY ═══════════════ -->
+  <div class="game-overlay" id="game-overlay">
+    <div class="game-overlay__header">
+      <div class="game-overlay__score" id="game-score">0</div>
+      <button class="game-overlay__close" id="game-close" aria-label="Close game">&times;</button>
+    </div>
+    <canvas id="game-canvas" class="game-overlay__canvas"></canvas>
+    <div class="game-overlay__gameover" id="game-over-screen" style="display:none;">
+      <h2 class="game-overlay__title">GAME OVER</h2>
+      <p class="game-overlay__final-score">Score: <span id="final-score">0</span></p>
+      <div class="game-overlay__actions">
+        <button class="btn btn--accent" id="play-again-btn">Play Again</button>
+        <a class="btn btn--outline-light" id="share-score-btn" href="#" target="_blank">Share on X</a>
+        <button class="btn btn--outline-light" id="mint-score-btn" style="display:none;">Mint Score as NFT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCRIPTS (CDN) ═══════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+
+  <!-- App Modules -->
+  <script src="js/Loader.js"></script>
+  <script src="js/SmoothScroller.js"></script>
+  <script src="js/ChainExperience.js"></script>
+  <script src="js/Cursor.js"></script>
+  <script src="js/UIAnimations.js"></script>
+  <script src="js/WalletManager.js"></script>
+  <script src="js/Guestbook.js"></script>
+  <script src="js/NodeRushGame.js"></script>
+  <script src="js/NetworkStats.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
